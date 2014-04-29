@@ -2,19 +2,24 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link href="/stylesheets/all.css" rel="stylesheet" type="text/css" />
     <title>C Summary</title>
   </head>
   
   <body>
     <header>
-      <h1>C Summary</h1>
-      <nav>
+      
+<nav>
   <dl>
     <dt>Prev</dt>
-    <dd><a href="functions.html">Functions</a></dd>
+    <dd><a href="loops.html">Loops</a></dd>
+    <dt>Home</dt>
+    <dd><a href="index.html">Intro to C</a></dd>
   </dl>
+  
 </nav>
 
+      <h1>C Summary</h1>
     </header>
 
     <h2>Types</h2>
@@ -38,11 +43,6 @@
     precision numbers than <code>float</code>, but uses up double the
     storage space. CGFloat is the decimal type used by the iOS Core
     Graphics framework.
-  </dd>
-  <dt><code>char</code></dt>
-  <dd>
-    The C type to handle a single letter. We will rarely use this as
-    we use Objective-C NSString instances instead.
   </dd>
   <dt>Pointer</dt>
   <dd>
@@ -68,6 +68,7 @@ typedef struct {
   int visits;
 } Location;
     </pre>
+
 Elements of a struct are accessed using dot notation.
 
 <pre>
@@ -99,11 +100,26 @@ location of a user interface element
   <dt>NSString</dt>
   <dd>%@</dd>
 </dl>
+
 <pre>
-NSString *name = @"Imp";
-float height = 3.43;
-int age = 4000;
-NSLog(@"I saw a %@ that was %f feet tall and %d years old", name, height, age);
+NSString *name = @"The Tempest";
+float height = 1.75;
+int age = 42;
+NSLog(@"%@ is my favorite Shakepear play", name);
+NSLog(@"You must be at least %f meteres tall to ride this ride", height);
+NSLog(@"That person over there is %i years old", age);
+</pre>
+
+<h2>Functions</h2>
+
+<pre>
+rtype functionName(type1 arg1, type2 arg2)
+</pre>
+
+<h2>Including Libraries</h2>
+<pre>
+#import &lt;math.h&gt;  // Angle brackets for accessing built-in functions
+#import "MyAwesomeUtility.h" // Quotes for accessing user functions
 </pre>
 
 <h2>Conditionals </h2>
@@ -132,18 +148,6 @@ for (initialize; test; increment) {
 }
 </pre>
 
-<h2>Functions</h2>
-
-<pre>
-rtype functionName(type1 arg1, type2 arg2)
-</pre>
-
-<h2>Including Libraries</h2>
-<pre>
-#import <math.h> // Angle brackets for accessing built-in functions
-#import "MyAwesomeUtility.h" // Quotes for accessing user functions
-</pre>
-
 <section>
   <h1>Excersizes</h1>
 
@@ -158,16 +162,24 @@ rtype functionName(type1 arg1, type2 arg2)
       location and must find the treasure. Represent the player, treasure,
       and map extent with structs. 
     </li>
+    <li>
+      Search for a C library that performs a task you are interested in.
+      Write a small program that uses a function from that library.
+    </li>
   </ol>
 </section>
 
 
     <footer>
-      <nav>
+      
+<nav>
   <dl>
     <dt>Prev</dt>
-    <dd><a href="functions.html">Functions</a></dd>
+    <dd><a href="loops.html">Loops</a></dd>
+    <dt>Home</dt>
+    <dd><a href="index.html">Intro to C</a></dd>
   </dl>
+  
 </nav>
 
     </footer>

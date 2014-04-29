@@ -2,21 +2,26 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link href="/stylesheets/all.css" rel="stylesheet" type="text/css" />
     <title>C Types</title>
   </head>
   
   <body>
     <header>
-      <h1>C Types</h1>
-      <nav>
+      
+<nav>
   <dl>
     <dt>Prev</dt>
     <dd><a href="hello_world.html">Hello World!</a></dd>
     <dt>Next</dt>
     <dd><a href="format_strings.html">Format String</a></dd>
+    <dt>Home</dt>
+    <dd><a href="index.html">Intro to C</a></dd>
   </dl>
+  
 </nav>
 
+      <h1>C Types</h1>
     </header>
 
     <h2>What does Static Typing Mean?</h2>
@@ -90,11 +95,6 @@ staticVar = 2;
     storage space. CGFloat is the decimal type used by the iOS Core
     Graphics framework.
   </dd>
-  <dt><code>char</code></dt>
-  <dd>
-    The C type to handle a single letter. We will rarely use this as
-    we use Objective-C NSString instances instead.
-  </dd>
   <dt>Pointer</dt>
   <dd>
     Pointers are variables that "point" to other variables. In
@@ -119,6 +119,7 @@ typedef struct {
   int visits;
 } Location;
     </pre>
+
 Elements of a struct are accessed using dot notation.
 
 <pre>
@@ -147,10 +148,69 @@ location of a user interface element
   want.
 </p>
 
+<h2>Declaring Variables</h2>
+
+<p>
+  Before we can use a variable to store data, it must be delcared with both
+  a name and a type. 
+</p>
+<pre>
+int anInteger;
+float aDecimal;
+NSString *aString; // "string" is programmer talk for text.
+</pre>
+<p>
+  Unlike int and float which are built-in C
+  types, <code>NSString</code> is actually a class specific to
+  Objective-C. The variable <code>aString</code> will hold a pointer
+  to an instance of <code>NSString</code>. If you are unfamiliar with
+  words like class, object, and instance, don't worry too much now, we
+  will cover them in detail in the next section. For now, just know
+  that if you need a variable to hold some text, you delcare it of
+  type <code>NSString *</code>.
+</p>
+
+<h2>Assigning Variables</h2>
+
+<p>Now that we have some variables, we should store data in them. A single
+equal sign <code>=</code> is used to store the value on the right side
+into the variable on the left side.
+
+<pre>
+int anInteger;
+float aDecimal;
+NSString *aString; // "string" is programmer talk for text.
+anInteger = 5;
+aDecimal = 2.7182;
+aString = @“The Deliverator belongs to an elite order, a hallowed subcategory.”;
+</pre>
+
+<p>
+  This example both declares several variables, and then assigns values to them.
+</p>
+
+<h2>Combining Declaration and Assignment</h2>
+
+<p>
+  It is possible to combine both the declaration and assignment of a variable
+  into the same line.
+</p>
+
+<pre>
+int anInteger = 5;
+float aDecimal = 2.7182;
+NSString *aString = @“The Deliverator belongs to an elite order, a hallowed subcategory.”;
+</pre>
+
 <section>
   <h1>Excersizes</h1>
 
   <ol>
+    <li>
+      Declare and assign a variable of types int, float, and
+      NSString*. Confirm that your program will run. While we can't
+      see any output yet, if it runs you are probably doing it right.
+    </li>
     <li>
       Create variables of different types and try assigning them to
       one another. What kind of compiler messages do you get?
@@ -161,13 +221,17 @@ location of a user interface element
 
 
     <footer>
-      <nav>
+      
+<nav>
   <dl>
     <dt>Prev</dt>
     <dd><a href="hello_world.html">Hello World!</a></dd>
     <dt>Next</dt>
     <dd><a href="format_strings.html">Format String</a></dd>
+    <dt>Home</dt>
+    <dd><a href="index.html">Intro to C</a></dd>
   </dl>
+  
 </nav>
 
     </footer>
