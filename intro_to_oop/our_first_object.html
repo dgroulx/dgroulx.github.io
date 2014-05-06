@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link href="/stylesheets/all.css" rel="stylesheet" type="text/css" />
-    <title></title>
+    <title>Our First Object</title>
   </head>
   
   <body>
@@ -12,28 +12,97 @@
 <nav>
   <dl>
     <dt>Prev</dt>
-    <dd><a href="using_objects.html">Using Objects</a></dd>
+    <dd><a href="nsdictionary.html">NSDictionary</a></dd>
     <dt>Next</dt>
-    <dd><a href="properties.html">Properties</a></dd>
+    <dd><a href="messages.html">Messages</a></dd>
     <dt>Home</dt>
     <dd><a href="index.html">Intro to Object Oriented Programming</a></dd>
   </dl>
   
 </nav>
 
-      <h1></h1>
+      <h1>Our First Object</h1>
     </header>
 
-    
+    <p>
+  While iOS comes with a wide variety of existing classes to use, in
+  most every program we will need to roll our own to describe a
+  particular problem domain.
+</p>
+
+<h2>The Interface File (*.h)</h2>
+
+<p>
+  Like functions, class definitions are split into .h files and .m
+  files. A basic class interface looks like this:
+</p>
+
+<pre>
+@interface SBSPerson : NSObject
+
+@end
+</pre>
+
+<p>
+  That's all it is. The <code>@interface</code> keyword begins a class
+  definition. Next comes the name of our new class. A ':' then the
+  name of our classes superclass. NSObject forms the base of the
+  Objective-C class hierarchy. Every class we make will either
+  directly inherit from NSObject, or will inherit from a class that
+  inherits from NSObject. <code>@end</code> signifies the end of
+  a class declaration.
+</p>
+
+<h2>The Implementation File (*.m)</h2>
+
+<pre>
+#import "Person.h"
+
+@implementation Person
+
+@end
+</pre>
+
+<p>
+  See how class declarations are paralleling function declarations?
+  These two files create a fully valid class. You can now go ahead
+  and create instances of these classes.
+</p>
+
+<pre>
+#import "Person.h"
+
+...
+
+Person *somebody = [[Person alloc] init];
+Person *otherPerson = [[Person alloc] init];
+</pre>
+
+<p>
+  Notice that we create instances of our new class the same as
+  we created NSArray and NSDictionary instances.
+</p>
+
+<section>
+  <h1>Excersizes</h1>
+
+  <ol>
+    <li>
+      Create the Person from this page. Make sure that you can
+      create instances of Person and compile your program.
+    </li>
+  </ol>
+</section>
+
 
     <footer>
       
 <nav>
   <dl>
     <dt>Prev</dt>
-    <dd><a href="using_objects.html">Using Objects</a></dd>
+    <dd><a href="nsdictionary.html">NSDictionary</a></dd>
     <dt>Next</dt>
-    <dd><a href="properties.html">Properties</a></dd>
+    <dd><a href="messages.html">Messages</a></dd>
     <dt>Home</dt>
     <dd><a href="index.html">Intro to Object Oriented Programming</a></dd>
   </dl>
